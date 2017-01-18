@@ -17,6 +17,7 @@ public class HelloWorld2017 {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("Hello World, my GitHub account is Ian Blanchette");
+        System.out.println("This is a simple change is my github");
     }
     
 }
