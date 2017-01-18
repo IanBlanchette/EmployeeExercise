@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class gameOfWar {
     ArrayList<Card> p1Hand;
     ArrayList<Card> p2Hand;
-    
+    int counter = 0;
     public gameOfWar (){
         p1Hand = new ArrayList<>();
         p2Hand = new ArrayList<>();
@@ -42,7 +42,10 @@ public class gameOfWar {
     {
         while (!p1Hand.isEmpty() && !p2Hand.isEmpty())
         {
+            
             playHand();
+            counter ++;
+            
         }
         
         if (p1Hand.isEmpty())
@@ -54,8 +57,13 @@ public class gameOfWar {
     // This simulates playing a hand 
     public void playHand()
     {
+        
+        
         Card p1Card = p1Hand.remove(0);
         Card p2Card = p2Hand.remove(0);
+        System.out.printf("Player 1: %s cards in hand %d" ,p1Card, p1Hand.size() + 1);
+        System.out.printf("\tPlayer 2: %s cards in hand %d%n", p2Card, p2Hand.size() + 1);
+        System.out.println(counter);
         
         // Player 1s card is higher then player 2's card
         if(p1Card.getFaceValue() > p2Card.getFaceValue())
@@ -94,6 +102,7 @@ public class gameOfWar {
             p2Hand.addAll(p1Hand);
             p1Hand.clear();
             p2Hand.addAll(warPile);
+            return;
         }
         //Check if player 2 had enough cards
         if (p2Hand.size() < 3)
@@ -101,6 +110,7 @@ public class gameOfWar {
             p1Hand.addAll(p2Hand);
             p2Hand.clear();
             p1Hand.addAll(warPile);
+            return;
         }
         
         warPile.add(p1Hand.remove(0));
@@ -110,6 +120,8 @@ public class gameOfWar {
         
         Card p1Card = p1Hand.remove(0);
         Card p2Card = p2Hand.remove(0);
+        
+        
         
         if (p1Card.getFaceValue() > p2Card.getFaceValue())
                 {
