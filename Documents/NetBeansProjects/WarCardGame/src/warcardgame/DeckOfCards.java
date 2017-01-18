@@ -53,9 +53,9 @@ public void shuffle()
 
 public Card dealTopCard()
 {
-    if(deck.isEmpty())
-        return null;
-    else
+    if(deck.size() > 0)
         return deck.remove(0);
+    else
+        return null;
 }
 }
