@@ -9,7 +9,7 @@ import java.util.Scanner;
  *
  * @author Ian
  */
-public class Employee 
+public abstract class Employee 
 {
     private String firstName, lastName;
     private int socialInsurance;
@@ -63,4 +63,5 @@ public Employee(String first, String last, int sin, LocalDate dob)
         return dateOfBirth;
     }
     
+    public abstract PayCheque getPayCheque();
 }
